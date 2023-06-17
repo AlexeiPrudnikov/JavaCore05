@@ -4,8 +4,13 @@ import java.io.File;
 import java.util.Arrays;
 
 public class Tree {
+    /**
+     * Вспомогательный метод печати дерева каталогов и файлов
+     * @param file корневой узел
+     * @param offsetStr строка смещения для отрисовки узла
+     * @param offset уровень вложения
+     */
     private static void printTree(File file, String offsetStr, int offset) {
-
         File[] files = file.listFiles();
         FileComporator fileComporator = new FileComporator();
         Arrays.sort(files, fileComporator);
@@ -27,6 +32,10 @@ public class Tree {
         }
     }
 
+    /**
+     * Метод печати дерева каталогов и файлов
+     * @param file корневой узел
+     */
     public static void printTree(File file) {
         System.out.println(file.getName());
         if (file.isDirectory()) {
